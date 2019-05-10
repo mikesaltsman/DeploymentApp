@@ -1,24 +1,76 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p>
+This is a structure for an application that consists of Users, Assets, Companies, Deployments and Messages. The messages are sent from physical assets (hardware) which are part of a deployment that is associated with a company these messages are parsed and data from the assets should be displayed based on the specific deployment these messages can contain an alert flag that displays if there is an issue with the asset a company has multiple users as well as other companies associated with it
+</p>
 
-Things you may want to cover:
+```
+module Asset
+    class Asset
+    end
+end
 
-* Ruby version
+module User
+    class User
+    end
+end
 
-* System dependencies
+module Company
+    class Company
+    end
 
-* Configuration
+    class UserAddedToCompany
+    end
 
-* Database creation
+    class DeploymentAddedToCompany
+    end
+    
+    class CompanyAddedToCompany
+    end
+end
 
-* Database initialization
+module Deployment
+    class Deployment
+    end
 
-* How to run the test suite
+    class AssetAddedToDeployment
+    end
+end
 
-* Services (job queues, cache servers, search engines, etc.)
+module Message
+    class Message
+    end
 
-* Deployment instructions
+    class MessageParsed
+    end
 
-* ...
+    class OpenAlertMessageFound
+    end
+
+    class CloseAlertMessageFound
+    end
+end
+
+module ReadModules
+    class DeploymentsList
+    end
+
+    class CompanyDeploymentsList
+    end
+
+    class DeploymentAssetsList
+    end
+    
+    class AssetMessagesList
+    end
+
+    class MessagesList
+    end
+
+    class UserCompaniesList
+    end
+
+    class CompanyUsersList
+    end
+end
+```
